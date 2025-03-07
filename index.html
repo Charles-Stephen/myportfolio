@@ -170,34 +170,32 @@ body.custom-background { background-color: #ffffff; }
 <header id="site-navigation" class="header text-center text-md-start py-2 sticky-header">
 	<div class="container">
 		<div class="row">
-			<div class="col-5 align-self-center">
+			<div class="col-sm-5 align-self-center">
 				<div class="logo text-center text-lg-start mb-3 mb-lg-0">
-		    		<div class="logo-image">
-		    						    	</div>
-					<div class="logo-content">
+					<div class="logo-content justify-content-center">
 				    	<a href="index.html" title="Charles Stephen">
 							<img src="CS.png" width="70vw" alt="">
 							<!-- Charles Stephen -->
 						</a></div>
 				</div>
 		  	</div>
-			<div class="col-7 align-self-center">
+			<div class="col-sm-7 align-self-center">
 				<button class="menu-toggle my-2 py-2 px-3" aria-controls="top-menu" aria-expanded="false" type="button">
 					<span aria-hidden="true">Menu</span>
 				</button>
 
+				<nav id="main-menu" class="close-panal">
+					<ul id="menu-menu-1" class="menu"><li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-17 current_page_item menu-item-39"><a href="index.html" aria-current="page">Home</a></li>
+	<li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href="#about_me">About Me</a></li>
+	<li id="menu-item-41" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a href="#skill_sec">Skill</a></li>
+	<li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-81"><a href="#portfolio_sec">Portfolio</a></li>
+	<li id="menu-item-82" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-82"><a href="#contact_sec">Contact</a></li>
+	</ul>						<button class="close-menu my-2 p-2" type="button">
+							<span aria-hidden="true"><i class="fa fa-times"></i></span>
+						</button>
+				</nav>
 			</div>
 
-			<nav id="main-menu" class="close-panal">
-				<ul id="menu-menu-1" class="menu"><li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-17 current_page_item menu-item-39"><a href="index.html" aria-current="page">Home</a></li>
-<li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href="#about_me">About Me</a></li>
-<li id="menu-item-41" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a href="#skill_sec">Skill</a></li>
-<li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-81"><a href="#portfolio_sec">Portfolio</a></li>
-<li id="menu-item-82" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-82"><a href="#contact_sec">Contact</a></li>
-</ul>						<button class="close-menu my-2 p-2" type="button">
-						<span aria-hidden="true"><i class="fa fa-times"></i></span>
-					</button>
-			</nav>
 
 			<div class="col-lg-2 col-md-2 col-sm-2  align-self-center head-btn text-center text-md-end">
 							</div>
@@ -436,17 +434,105 @@ body.custom-background { background-color: #ffffff; }
 		</div>
 					</div>
 		</section>
-		<div class="elementor-element elementor-element-24d0cbe e-flex e-con-boxed e-con e-parent" data-id="24d0cbe" data-element_type="container" id="portfolio_sec">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-f2aedb2 elementor-widget elementor-widget-heading" data-id="f2aedb2" data-element_type="widget" data-widget_type="heading.default">
+		<div class="mt-5 elementor-element elementor-element-24d0cbe e-flex e-con-boxed e-con e-parent" data-id="24d0cbe" data-element_type="container" id="portfolio_sec">
+					<div class="mt-5 e-con-inner">
+				<div class="mt-5 elementor-element elementor-element-f2aedb2 elementor-widget elementor-widget-heading" data-id="f2aedb2" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Portfolio</h2>				</div>
+					<h2 class="container-fluid elementor-heading-title elementor-size-default">Portfolio</h2>				</div>
+				
+					<!-- portfolio start -->
+					<style>
+						body {
+							font-family: Arial, sans-serif;
+							text-align: center;
+							margin: 20px;
+						}
+						.tabs {
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: center;
+							margin-bottom: 20px;
+						}
+						.tab {
+							padding: 10px 20px;
+							cursor: pointer;
+							border: 1px solid #ddd;
+							margin: 0 5px;
+							background: #f0f0f0;
+						}
+						.tab.active {
+							background: #ffb424;
+							color: #fff;
+						}
+						.gallery {
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: center;
+						}
+						.gallery-item {
+							display: none;
+							width: 200px;
+							margin: 10px;
+							border: 1px solid #ddd;
+							padding: 10px;
+						}
+						.gallery-item img {
+							width: 100%;
+							height: auto;
+						}
+						.show {
+							display: block;
+						}
+					</style>
+
+					<div class="tabs">
+						<div class="tab active" onclick="filterGallery('all')">All</div>
+						<div class="tab" onclick="filterGallery('wordpress')">WordPress Websites</div>
+						<div class="tab" onclick="filterGallery('php')">PHP Websites</div>
+						<div class="tab" onclick="filterGallery('frontend')">Frontend Websites</div>
+						<div class="tab" onclick="filterGallery('canva')">Canva Post</div>
+					</div>
+
+					<div class="gallery">
+						<div class="gallery-item wordpress show align-self-center"><img src="wp-content/uploads/2025/03/zelpha.jpeg" alt="Zelpha Technologies"></div>
+						<div class="gallery-item php show align-self-center"><img src="wp-content/uploads/2025/03/ecs.jpeg" alt="ECS"></div>
+						<div class="gallery-item frontend show align-self-center"><img src="wp-content/uploads/2025/03/CareMediPharmacy.JPG" alt="Care Medi Pharmacy"></div>
+						<div class="gallery-item canva show align-self-center"><img src="wp-content/uploads/2025/03/celebration.JPG" alt="Celebration"></div>
+						<div class="gallery-item canva show align-self-center"><img src="wp-content/uploads/2025/03/CA fitness.png" alt="CA Fittness"></div>
+					</div>
+
+					<script>
+						function filterGallery(category) {
+							let items = document.querySelectorAll('.gallery-item');
+							let tabs = document.querySelectorAll('.tab');
+							
+							tabs.forEach(tab => tab.classList.remove('active'));
+							event.target.classList.add('active');
+							
+							if (category === 'all') {
+								items.forEach(item => item.classList.add('show'));
+							} else {
+								items.forEach(item => {
+									item.classList.remove('show');
+									if (item.classList.contains(category)) {
+										item.classList.add('show');
+									}
+								});
+							}
+						}
+					</script>
+					<!-- portfolio start -->
+
 				</div>
 					</div>
 				</div>
-		<div class="elementor-element elementor-element-5e02de8 e-flex e-con-boxed e-con e-parent" data-id="5e02de8" data-element_type="container" id="contact_sec">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-c7742ae elementor-widget elementor-widget-heading" data-id="c7742ae" data-element_type="widget" data-widget_type="heading.default">
+
+
+
+
+				<div class="mt-5 elementor-element elementor-element-5e02de8 e-flex e-con-boxed e-con e-parent" data-id="5e02de8" data-element_type="container" id="contact_sec">
+					<div class="mt-5 e-con-inner">
+				<div class="mt-5 elementor-element elementor-element-c7742ae elementor-widget elementor-widget-heading" data-id="c7742ae" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 					<h2 class="elementor-heading-title elementor-size-default">Contact</h2>				</div>
 				</div>
