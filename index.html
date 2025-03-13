@@ -162,6 +162,14 @@ body.custom-background { background-color: #ffffff; }
 
 
 <!-- contact form -->
+<style>
+    @media (max-width: 1024px) { /* Adjust breakpoint as needed */
+        #emailForm {
+            display: none;
+        }
+    }
+</style>
+
 <script>
 function sendEmail() {
     let to = "charlesprivate031@gmail.com";
@@ -578,7 +586,7 @@ function sendEmail() {
 		<div class="elementor-element elementor-element-26a17e4 e-con-full e-flex e-con e-child" data-id="26a17e4" data-element_type="container">
 				<div class="elementor-element elementor-element-1d5b646 elementor-widget elementor-widget-html" data-id="1d5b646" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-					<form onsubmit="event.preventDefault(); sendEmail();">
+					<form  id="emailForm" onsubmit="event.preventDefault(); sendEmail();">
 						<div style="display: flex;">
 							<input type="text" style="width: 50%; padding: 10px; border: 2px solid #FFB424; border-radius: 15px; margin: 5px;" id="yourname" placeholder="Your Name" required>
 							<input type="tel" style="width: 50%; padding: 10px; border: 2px solid #FFB424; border-radius: 15px; margin: 5px;" id="yourphone" name="yourphone" placeholder="Phone Number" required>
