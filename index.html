@@ -159,6 +159,24 @@ body.custom-background { background-color: #ffffff; }
   src: url(wp-content/fonts/poppins/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }</style>
+
+
+<!-- contact form -->
+<script>
+function sendEmail() {
+    let to = "charlesprivate031@gmail.com";
+    let subject = "My Query";
+
+    let name = document.getElementById("yourname").value;
+    let phone = document.getElementById("yourphone").value;
+    let message = document.getElementById("yourmsg").value;
+
+    let fullMessage = `Name: ${name}\nPhone: ${phone}\nMessage: ${message}`;
+
+    let gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullMessage)}`;
+    window.open(gmailUrl, "_self"); // Opens Gmail in the SAME tab
+}
+</script>
 </head>
 
 <body class="home page-template page-template-templates page-template-frontpage page-template-templatesfrontpage-php page page-id-17 custom-background wp-embed-responsive elementor-default elementor-kit-6 elementor-page elementor-page-17">
@@ -201,25 +219,6 @@ body.custom-background { background-color: #ffffff; }
 							</div>
 		</div>
 	</div>
-
-
-
-	<!-- Contact form  -->
-	<script>
-        function sendEmail() {
-            let to = "charlesprivate031@gmail.com";
-            let subject = "My Query";
-
-            let name = document.getElementById("yourname").value;
-            let phone = document.getElementById("yourphone").value;
-            let message = document.getElementById("yourmsg").value;
-
-            let fullMessage = `Name: ${name}\nPhone: ${phone}\nMessage: ${message}`;
-
-            let gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullMessage)}`;
-            window.open(gmailUrl, "_blank"); // Opens Gmail in a new tab
-        }
-    </script>
 </header>
 
 <div id="content">
